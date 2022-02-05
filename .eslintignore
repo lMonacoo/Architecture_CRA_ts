@@ -1,0 +1,11 @@
+*.html
+*.css
+*.svg
+*.d.ts
+node_modules
+
+coverage
+build
+
+craco.config.js
+commitlint.config.js
