@@ -1,6 +1,63 @@
-# Getting Started with Create React App
+# React + Typescript + Styled Components Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## `FOLDER STRUCTURE`
+
+---
+
+## `ABSOLUTE PATHS`
+
+---
+
+## `COMMITLINT - COMMIT RULES`
+
+We use _Commitlint_ and _Husky_ to control the syntax of commits.
+<br>
+**CONFIG:**
+Gitmoji has been configured in the project
+<br>
+
+### _first step_
+
+- 🚀: Deploy
+- ✨: New feature
+- ♻️: Refactor
+- 💄: UI or styles update
+- 🔥: Remove code or files
+- 🐛: Bug fix
+- 📦️: Change some dependency
+- 🚧: Work in progress
+- 🔀: Merge branches
+- 🔧: Configurations files
+- 🍱: Assets
+- 🔇: Remove logs
+- 🔊: Add or update logs
+- 🏷️: Fix types
+- 📝: Documentation update
+
+<br>
+
+### _second step_
+
+Describe what page you had worked and put it inside brackets
+OBS: The scope part have one blank space before
+example: ` [page 1]`
+
+<br>
+
+### _last step_
+
+Describe your commit!
+OBS: The description part have `:` and a blank space before start
+
+### **complete example:**
+
+✨ [dashboard]: create the markdown component
+
+---
+
+## `PLOP - Create files dynamically`
+
+---
 
 ## Available Scripts
 
@@ -28,10 +85,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `ESLINT IMPORT ORDER`
-
-import React from 'react'; // external
-import Bar from '~/components/Bar'; // SPECIAL
-import {ReactComponent as Logo} from '../logo.svg'; // parent
-import './App.css'; // sibling

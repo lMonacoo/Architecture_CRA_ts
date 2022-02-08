@@ -3,6 +3,14 @@
     "browser": true,
     "es2021": true
   },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "fragment": "Fragment",
+      "version": "detect"
+    }
+  },
   "extends": [
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
