@@ -22,29 +22,29 @@ const config = plop => {
       // create component files
       actions.push({
         type: 'add',
-        path: `../src/presentation/components/${typeOfComponent}/{{dashCase name}}/index.tsx`,
+        path: `../src/components/${typeOfComponent}/{{dashCase name}}/index.tsx`,
         templateFile: 'templates/index.tsx.hbs'
       });
       actions.push({
         type: 'add',
-        path: `../src/presentation/components/${typeOfComponent}/{{dashCase name}}/{{lowerCase name}}DTO.ts`,
+        path: `../src/components/${typeOfComponent}/{{dashCase name}}/{{lowerCase name}}DTO.ts`,
         templateFile: 'templates/interfaces.ts.hbs'
       });
       actions.push({
         type: 'add',
-        path: `../src/presentation/components/${typeOfComponent}/{{dashCase name}}/styles.ts`,
+        path: `../src/components/${typeOfComponent}/{{dashCase name}}/styles.ts`,
         templateFile: 'templates/styles.ts.hbs'
       });
 
       // insert component export in index.ts
       actions.push({
-        path: `../src/presentation/components/${typeOfComponent}/index.ts`,
+        path: `../src/components/${typeOfComponent}/index.ts`,
         pattern: /(\/\/ COMPONENT IMPORTS - PLOP)/g,
         template: "import { {{pascalCase name}} } from './{{dashCase name}}';\n$1",
         type: 'modify'
       });
       actions.push({
-        path: `../src/presentation/components/${typeOfComponent}/index.ts`,
+        path: `../src/components/${typeOfComponent}/index.ts`,
         pattern: /(\/\/ COMPONENT EXPORTS - PLOP)/g,
         template: '\t{{pascalCase name}},\n$1',
         type: 'modify'
