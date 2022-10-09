@@ -1,5 +1,5 @@
 // COMPONENT IMPORTS - PLOP
 
-export {
+export  {
   // COMPONENT EXPORTS - PLOP
 };

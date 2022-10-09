@@ -2,14 +2,15 @@
 const matchOnlyAnyEmoji =
   /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/;
 const matchOptionalScopeWithSpaceBefore = /(\s\[([a-z\-]*?)\])/; // " [lower case or Kebab case]",
-const subjectThatDontStartWithBracket = /(:\s([a-z\-]+))/; // "Add tests" but don't allow "[ Add tests"
+const subjectThatDontStartWithBracket = /(:\s([ a-z\-]+))/; // "Add tests" but don't allow "[ Add tests"
+
 
 module.exports = {
   parserPreset: {
     parserOpts: {
       headerPattern: new RegExp(
         "^" +
-          matchOnlyAnyEmoji.source + subjectThatDontStartWithBracket.source +
+          matchOnlyAnyEmoji.source + matchOptionalScopeWithSpaceBefore.source + subjectThatDontStartWithBracket.source +
           "$"
       ),
       headerCorrespondence: ["emoji", "ticket", "subject"],
@@ -20,7 +21,6 @@ module.exports = {
       rules: {
         "header-match-team-pattern": (parsed) => {
           const { emoji, ticket, subject } = parsed;
-          console.log(parsed)
           if (emoji === null && ticket === null && subject === null) {
             return [
               false,
@@ -57,7 +57,7 @@ module.exports = {
         "💄": "UI or styles update",
         "🔥": "Remove code or files",
         "🐛": "Bug fix",
-        "📦️": "Change some dependency",
+        "📦": "Change some dependency",
         "🚧": "Work in progress",
         "🔀": "Merge branches",
         "🔧": "Configurations files",
